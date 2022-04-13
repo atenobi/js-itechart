@@ -163,9 +163,10 @@ const skip = (arr, index) => {
   } else {
     console.log("This array has no such index.");
   }
+  return result;
 };
 
-// newArr skip(arr, number)
+// // newArr skip(arr, number)
 // skip(numberArray, 2);
 // skip(numberArray, -2);
 // skip(stringArray, 4);
@@ -180,12 +181,31 @@ const take = (arr, index) => {
   } else {
     console.log("This array has no such index.");
   }
+  return result;
 };
 
-// newArr take(arr, number)
-take(numberArray, 2);
-take(numberArray, -2);
-take(stringArray, 4);
-take(objectArray, 6);
+// // newArr take(arr, number)
+// take(numberArray, 2);
+// take(numberArray, -2);
+// take(stringArray, 4);
+// take(objectArray, 6);
 
 //Chaining: Implement the ability to create chains: asChain(arr).skip(func).take(func) ???
+
+function asChain(arr) {
+  let array = arr;
+
+  this.Skip = (index) => {
+    array = skip(array, index);
+    return this;
+  };
+
+  this.Take = (index) => {
+    array = take(array, index);
+    return this;
+  };
+
+  return this;
+};
+
+asChain(numberArray).Skip(2).Take(6);
