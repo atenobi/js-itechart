@@ -64,7 +64,8 @@ function Chain(array) {
   };
 }
  
-Chain.prototype = new function MathLibPrototype() {
+// ispravit
+Chain.prototype = new function ChainPrototype() {
   this.skipInd = function (arr, index) {
     let result = [];
     if (index < arr.length - 1) {
@@ -89,3 +90,11 @@ Chain.prototype = new function MathLibPrototype() {
 function asChain(array) {
    return new Chain(array);
 }
+
+module.exports = {
+  firstArrEl,
+  lastArrEl,
+  mySkip,
+  myTake,
+  asChain,
+ };

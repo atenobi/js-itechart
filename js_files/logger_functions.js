@@ -45,4 +45,7 @@ const loggerFunc = (message) => {
     return  tableLogger(date.toLocaleString("en-US", options), ...args);
   };
   
-  
+  module.exports = {
+   loggerFunc,
+   tableLogger,
+  };

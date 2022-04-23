@@ -1,0 +1,22 @@
+{
+  "name": "js",
+  "version": "0.0.1",
+  "description": "",
+  "keywords": [
+    "js"
+  ],
+  "license": "ISC",
+  "author": "atenobi",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1",
+    "prettier": "2.6.0"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-main:atenobi/js-itechart.git"
+  }
+}
