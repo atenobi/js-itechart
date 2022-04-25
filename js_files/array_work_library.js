@@ -64,7 +64,6 @@ function Chain(array) {
   };
 }
  
-// ispravit
 Chain.prototype = new function ChainPrototype() {
   this.skipInd = function (arr, index) {
     let result = [];

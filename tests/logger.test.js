@@ -1,15 +1,16 @@
 //                                  *** Logger tests ***
 // __________________________________________________________________________________________
 
-const {
-    loggerFunc,
-    tableLogger,
-} = require("../js_files/logger_functions");
+const { loggerFunc, tableLogger } = require("../js_files/logger_functions");
 
-test('function must show string in console', ()=> {
-    expect(loggerFunc('Hello')).toBe('Hello');
+describe("loggerFunc", () => {
+  test('should simple show string in console (output: "inserted string")', () => {
+    expect(loggerFunc("Hello")).toBe("Hello");
+  });
 });
-  
-test('function must separate her arguments by "|" symbol', () => {
-    expect(tableLogger("Hello","world")).toBe("Hello | world");
+
+describe("tableLogger", () => {
+  test('should separate inserted arguments by "|" symbol (output: "argument_1" "|" "argument_2")', () => {
+    expect(tableLogger("Hello", "world")).toBe("Hello | world");
+  });
 });
