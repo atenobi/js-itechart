@@ -22,3 +22,14 @@ const myIsUndefined = (inputedData) => typeof inputedData === "undefined";
 
 const myIsNull = (inputedData) =>
   typeof inputedData === "number" || inputedData === null ? true : false;
+
+export {
+  myIsArray,
+  myIsBoolean,
+  myIsDate,
+  myIsFunction,
+  myIsNull,
+  myIsNumber,
+  myIsString,
+  myIsUndefined,
+};
