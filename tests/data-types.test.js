@@ -1,7 +1,7 @@
 //                                  *** Data types tests ***
 // __________________________________________________________________________________________
 
-const {
+import {
   myIsArray,
   myIsBoolean,
   myIsDate,
@@ -10,7 +10,7 @@ const {
   myIsNumber,
   myIsString,
   myIsUndefined,
-} = require("../js_files/data_types_library");
+} from "../js_files/data_types_library";
 
 // array test
 describe("myIsArray", () => {
@@ -18,11 +18,12 @@ describe("myIsArray", () => {
     expect(myIsArray([])).toBe(true);
     expect(myIsArray([1, 2])).toBe(true);
   });
-  
+
   test("should check value and return boolean result(not array=false)", () => {
     expect(myIsArray("")).toBe(false);
     expect(myIsArray({})).toBe(false);
     expect(myIsArray(null)).toBe(false);
+    expect(myIsArray(undefined)).toBe(false);
   });
 });
 
@@ -67,10 +68,15 @@ describe("myIsFunction", () => {
     expect(myIsFunction(function () {})).toBe(true);
   });
 
+  test("should check and return boolean result(function=true)", () => {
+    expect(myIsFunction(() => {})).toBe(true);
+  });
+
   test("should check and return boolean result(not function=false)", () => {
     expect(myIsFunction("")).toBe(false);
     expect(myIsFunction({})).toBe(false);
     expect(myIsFunction(null)).toBe(false);
+    expect(myIsFunction(undefined)).toBe(false);
   });
 });
 

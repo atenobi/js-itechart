@@ -24,7 +24,7 @@ const lastArrEl = (array) => {
 };
 
 // // make new array method skip (dismiss from index)
-function mySkip  (arr, index) {
+function mySkip(arr, index) {
   let result = [];
   if (index < arr.length - 1) {
     result = arr.slice(index - 1);
@@ -32,10 +32,10 @@ function mySkip  (arr, index) {
   } else {
     return "This array has no such index.";
   }
-};
+}
 
 // // make new array method take (take to index)
-function myTake (arr, index) {
+function myTake(arr, index) {
   let result = [];
   if (index < arr.length - 1) {
     result = arr.slice(0, index);
@@ -43,28 +43,30 @@ function myTake (arr, index) {
   } else {
     return "This array has no such index.";
   }
-};
+}
 
 // Chaining: Implement the ability to create chains: asChain(arr).skip(func).take(func)
 // https://gohtml.ru/js/142-zamyikaniya-v-javascript
 
 function Chain(array) {
   var result = array;
- 
-  this.result = function () { return result };
- 
+
+  this.result = function () {
+    return result;
+  };
+
   this.skip = function (index) {
-      result = this.skipInd(result, index);
+    result = this.skipInd(result, index);
     return this;
   };
- 
+
   this.take = function (index) {
-     result = this.takeInd(result, index);
+    result = this.takeInd(result, index);
     return this;
   };
 }
- 
-Chain.prototype = new function ChainPrototype() {
+
+Chain.prototype = new (function ChainPrototype() {
   this.skipInd = function (arr, index) {
     let result = [];
     if (index < arr.length - 1) {
@@ -74,8 +76,8 @@ Chain.prototype = new function ChainPrototype() {
       return "This array has no such index.";
     }
   };
- 
-   this.takeInd = function (arr, index) {
+
+  this.takeInd = function (arr, index) {
     let result = [];
     if (index < arr.length - 1) {
       result = arr.slice(0, index);
@@ -84,16 +86,10 @@ Chain.prototype = new function ChainPrototype() {
       return "This array has no such index.";
     }
   };
-};
+})();
 
 function asChain(array) {
-   return new Chain(array);
+  return new Chain(array);
 }
 
-module.exports = {
-  firstArrEl,
-  lastArrEl,
-  mySkip,
-  myTake,
-  asChain,
- };
+export { firstArrEl, lastArrEl, mySkip, myTake, asChain };

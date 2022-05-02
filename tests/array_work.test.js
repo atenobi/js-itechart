@@ -1,13 +1,13 @@
 //                                  *** Array work tests ***
 // __________________________________________________________________________________________
 
-const {
+import {
     firstArrEl,
     lastArrEl,
     mySkip,
     myTake,
     asChain,
-} = require("../js_files/array_work_library");
+} from "../js_files/array_work_library";
 
 const testArrayNum = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 const testArrayStr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'g'];

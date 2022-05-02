@@ -1,5 +1,5 @@
 const powNumbers = (x, y) => {
-//   console.log(x * y);
+  //   console.log(x * y);
   return x * y;
 };
 
@@ -8,4 +8,4 @@ const asyncExecution = (arg1, arg2) =>
 
 // asyncExecution(2, 2);
 
-module.exports = { powNumbers, asyncExecution };
+export { powNumbers, asyncExecution };
